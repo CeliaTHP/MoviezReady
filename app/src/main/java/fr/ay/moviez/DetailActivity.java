@@ -17,6 +17,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +37,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView movieID;
 
 
-    ;
-    private static String baseurl = "http://image.tmdb.org/t/p/w92";
+
 
 
     @Override
@@ -61,6 +65,8 @@ public class DetailActivity extends AppCompatActivity {
         movieID.setText(id);
 
         String findUrl = "https://api.themoviedb.org/3/movie/ " + id + "?api_key=e4a9d54204f8ee1d8121e867e9a8a5a5";
+        final String baseurl = "https://image.tmdb.org/t/p/w500";
+
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, findUrl, null, new Response.Listener<JSONObject>() {
             @Override
@@ -81,8 +87,16 @@ public class DetailActivity extends AppCompatActivity {
                         ddate.setText(date);
 
 
+                        String poster = response.getString("poster_path");
+                        ImageView dposter = findViewById(R.id.poster_detail);
+                        Picasso.get().load(baseurl+poster).into(dposter);
+
+
+                        //GetGenres
+
                         JSONArray genres = response.getJSONArray("genres");
                         ArrayList list = new ArrayList();
+
 
 
                         for (int x = 0; x < genres.length(); x++) {
