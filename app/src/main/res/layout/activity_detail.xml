@@ -62,4 +62,12 @@
         android:textColor="@color/colorBlack"
         android:textSize="16sp"/>
 
+    <com.synnapps.carouselview.CarouselView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:slideInterval="3000"
+        app:radius="6dp"
+        app:strokeColor="#FF777777"
+        app:strokeWidth="1dp" />
+
 </LinearLayout>

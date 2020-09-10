@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MovieZ</string>
     <string name="welcome">Bienvenue sur Moviez</string>
-    <string name="pres">Grâce à MovieZ, tu vas pouvoir retrouver tous les films de ton choix en quelques clics !\nSi un film t\'intéresse, clique tout simplement dessus et tu auras accès à son affiche, son résumé, ainsi qu\'à sa bande-annonce!\n\nPour accéder à la liste de films, clique sur notre logo ! </string>
+    <string name="pres">Grâce à MovieZ, tu vas pouvoir retrouver tous les films de ton choix en quelques clics !\nSi un film t\'intéresse, clique tout simplement dessus et tu auras accès à son affiche, son résumé, ainsi qu\'à sa bande-annonce(à venir)\n\n\nPour accéder à la liste de films du moment, clique sur notre logo ! </string>
     <string name="title_activity_movie__items">Movie_Items</string>
     <string name="tab_text_1">Tous les films</string>
     <string name="tab_text_2">Rechercher un film</string>
@@ -17,5 +17,6 @@
     <string name="syn_detail">Synopsis</string>
     <string name="info_id">ID</string>
     <string name="genre_info">"Genres : "</string>
+    <string name="affiche">"À l'affiche :"</string>
 
 </resources>

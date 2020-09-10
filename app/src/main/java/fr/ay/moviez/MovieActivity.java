@@ -2,6 +2,7 @@ package fr.ay.moviez;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,7 +39,7 @@ public class MovieActivity extends AppCompatActivity {
 RecyclerView recyclerView;
 List<Movie> movieList;
 private static String url = "https://api.themoviedb.org/3/trending/all/day?api_key=e4a9d54204f8ee1d8121e867e9a8a5a5";
-private static String baseurl = "http://image.tmdb.org/t/p/w92";
+private static String baseurl = "http://image.tmdb.org/t/p/w154";
 MovieAdapter adapter;
 
 //check.Moviexml
@@ -50,6 +51,8 @@ MovieAdapter adapter;
         setContentView(R.layout.activity_movie);
 
         recyclerView = findViewById(R.id.list_recycler_view_movie);
+        RecyclerView.ItemDecoration div = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(div);
         movieList = new ArrayList<>();
         getTrends();
 
@@ -59,7 +62,6 @@ MovieAdapter adapter;
         TextView movieDate = findViewById(R.id.date_detail);
         TextView movieGen = findViewById(R.id.genre_detail);
         TextView movieSyn = findViewById(R.id.syn_detail);
-
 
 
 
