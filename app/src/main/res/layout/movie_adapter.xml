@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/no_image" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/titleview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:maxLines="1"
+            android:layout_marginTop="20dp"
+            android:text="@string/info_title"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"/>
+
+
+        <TextView
+            android:id="@+id/synview"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleview"
+            android:maxLength="200"
+            android:ellipsize="marquee"
+            android:text="@string/info_syn"
+            android:textSize="12sp"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/idview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/dateview"
+            android:text="@string/info_id"
+            android:textSize="8sp"
+            android:maxLength="10"
+            android:textColor="@color/colorBlack"
+            />
+
+        <TextView
+            android:id="@+id/dateview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/info_date"
+            android:textSize="15sp"
+            android:maxLength="10"
+            android:textColor="@color/colorBlack"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
