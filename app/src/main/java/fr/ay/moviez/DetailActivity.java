@@ -5,10 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +25,8 @@ import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
 import com.squareup.picasso.Picasso;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,12 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity {
-
-
     TextView movieID;
-
-
-
 
 
     @Override
@@ -51,8 +51,33 @@ public class DetailActivity extends AppCompatActivity {
         String id = details.getStringExtra("id");
         movieID.setText(id);
 
+       /* //carousel
+        CarouselView carouselView = findViewById(R.id.carousel);
+        carouselView.setImageListener(new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+
+            }
+        });
+        */
+
         getDetails();
+        getVideos();
     }
+
+
+
+    //getCarousel();
+
+    private void getVideos() {
+
+        String ytkey= "AIzaSyA3UcSCQAFb1a_1ntyay55akur_iPo68Qk";
+
+        String vurl = "https://www.youtube.com/watch?v=5lGoQhFb4NM";
+
+    }
+
+
 
     //getDetails();
 
@@ -87,7 +112,7 @@ public class DetailActivity extends AppCompatActivity {
                         ddate.setText(date);
 
 
-                        String poster = response.getString("poster_path");
+                        String poster = response.getString("backdrop_path");
                         ImageView dposter = findViewById(R.id.poster_detail);
                         Picasso.get().load(baseurl+poster).into(dposter);
 

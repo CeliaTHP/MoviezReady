@@ -1,73 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     android:gravity="center_horizontal"
-    tools:context=".DetailActivity"
-    android:layout_margin="10dp" >
-    
-    <ImageView
-        android:id="@+id/poster_detail"
-        android:layout_width="match_parent"
-        android:layout_height="300sp"
-        android:src="@drawable/no_image"
-        />
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
 
-    <TextView
-        android:id="@+id/title_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_detail"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:textColor="@color/colorBlack"
-        android:gravity="center"/>
-    <TextView
-        android:id="@+id/id_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/info_id"
-        android:textSize="12sp"
-        android:textColor="@color/colorBlack"/>
-
-    <TextView
-        android:layout_marginTop="40dp"
-        android:id="@+id/genre_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/genre_detail"
-        android:textSize="18sp"
-        android:textColor="@color/colorBlack"
-        />
+     <ScrollView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
 
 
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:gravity="center_horizontal"
+             android:orientation="vertical"
+             android:layout_marginTop="10dp">
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/date_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/date_detail"
-        android:textColor="@color/colorBlack"/>
+             <ImageView
+                 android:id="@+id/poster_detail"
+                 android:layout_width="match_parent"
+                 android:layout_height="200dp"
+                 android:src="@drawable/no_image"
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/syn_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/syn_detail"
-        android:textColor="@color/colorBlack"
-        android:textSize="16sp"/>
+                 />
 
-    <com.synnapps.carouselview.CarouselView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:slideInterval="3000"
-        app:radius="6dp"
-        app:strokeColor="#FF777777"
-        app:strokeWidth="1dp" />
+             <TextView
+                 android:id="@+id/title_detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"
+                 android:gravity="center"
+                 android:text="@string/title_detail"
+                 android:textColor="@color/colorBlack"
+                 android:textSize="24sp" />
 
-</LinearLayout>
+             <TextView
+                 android:id="@+id/id_detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/info_id"
+                 android:textColor="@color/colorBlack"
+                 android:textSize="10sp" />
+
+             <TextView
+                 android:id="@+id/genre_detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/genre_detail"
+                 android:textColor="@color/colorBlack"
+                 android:textSize="16sp" />
+
+
+             <TextView
+                 android:id="@+id/date_detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/date_detail"
+                 android:textColor="@color/colorBlack" />
+
+             <TextView
+                 android:id="@+id/syn_detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:text="@string/syn_detail"
+                 android:textColor="@color/colorBlack"
+                 android:textSize="14sp" />
+
+             <TextView
+                 android:id="@+id/trailer_detail"
+                 android:layout_marginTop="10dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/info_trailer"
+                 android:textColor="@color/colorBlack"
+                 android:textSize="20sp"/>
+
+             <ImageView
+                 android:layout_width="40dp"
+                 android:layout_height="40dp"
+                 android:layout_marginStart="-120dp"
+                 android:layout_marginTop="-20dp"
+                 android:src="@drawable/arrow" />
+
+             <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                 android:layout_marginTop="10dp"
+                 android:id="@+id/ytplayer"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:autoPlay="true"
+                 app:showYouTubeButton="false"
+                 app:videoId="5lGoQhFb4NM" />
+
+         </LinearLayout>
+
+     </ScrollView>
+
+</RelativeLayout>

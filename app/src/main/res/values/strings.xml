@@ -18,5 +18,6 @@
     <string name="info_id">ID</string>
     <string name="genre_info">"Genres : "</string>
     <string name="affiche">"À l'affiche :"</string>
+    <string name="info_trailer">VOIR LES TRAILERS</string>
 
 </resources>
