@@ -19,5 +19,10 @@
     <string name="genre_info">"Genres : "</string>
     <string name="affiche">"À l'affiche :"</string>
     <string name="info_trailer">VOIR LES TRAILERS</string>
+    <string name="url_vid">5lGoQhFb4NM</string>
+    <string name="title_activity_checktabs">checktabsActivity</string>
+    <string name="fullscren_text">MODE PLEIN ÉCRAN</string>
+    <string name="swiperight"><![CDATA[>]]></string>
+    <string name="swipeleft"><![CDATA[<]]></string>
 
 </resources>

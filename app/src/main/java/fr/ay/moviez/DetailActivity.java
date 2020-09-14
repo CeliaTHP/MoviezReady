@@ -1,7 +1,10 @@
 package fr.ay.moviez;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.media.Image;
@@ -24,6 +27,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.tabs.TabLayout;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -36,46 +43,65 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.ay.moviez.ui.main.SectionsPagerAdapter;
+
 public class DetailActivity extends AppCompatActivity {
     TextView movieID;
+   ArrayList<VideoList> arrayList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        //tabs
 
-
+        //get movie id
         movieID = findViewById(R.id.id_detail);
         Intent details = getIntent();
         String id = details.getStringExtra("id");
         movieID.setText(id);
 
-       /* //carousel
-        CarouselView carouselView = findViewById(R.id.carousel);
-        carouselView.setImageListener(new ImageListener() {
-            @Override
-            public void setImageForPosition(int position, ImageView imageView) {
+        //get recycle view
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView recyclerView = findViewById(R.id.video_recycleview);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        arrayList = new ArrayList<>();
 
-            }
-        });
-        */
+        VideoList videoList = new VideoList("https://www.youtube.com/watch?v=5lGoQhFb4NM");
+        arrayList.add(videoList);
+        VideoList videoList1 = new VideoList("https://www.youtube.com/watch?v=V_yI8Tjx_Xo");
+        arrayList.add(videoList1);
+
+
+        VideoAdapter videoAdapter = new VideoAdapter(arrayList,getApplicationContext());
+        recyclerView.setAdapter(videoAdapter);
+
+
+
+
+
+
+
+
 
         getDetails();
-        getVideos();
+       // getVideos();
+
+
     }
 
 
 
-    //getCarousel();
+    //getVideos;
 
-    private void getVideos() {
 
-        String ytkey= "AIzaSyA3UcSCQAFb1a_1ntyay55akur_iPo68Qk";
 
-        String vurl = "https://www.youtube.com/watch?v=5lGoQhFb4NM";
 
-    }
+
+
+
 
 
 

@@ -83,7 +83,6 @@ MovieAdapter adapter;
 
                 for (int i = 0; i < jsonArray.length(); i++) {
                     try {
-                    jsonArray = response.getJSONArray("results");
                     JSONObject res = jsonArray.getJSONObject(i);
                         Movie movie = new Movie();
                         movie.setTitle(res.getString("title"));
