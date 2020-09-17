@@ -8,90 +8,86 @@
     android:orientation="vertical"
     tools:context=".DetailActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <!--<androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tabs"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">!-->
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" />
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-     <ScrollView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="50dp"
-         android:layout_marginStart="5dp"
-         android:layout_marginEnd="5dp">
+            <ImageView
+                android:id="@+id/poster_detail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/no_image"
 
-         <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:gravity="center_horizontal"
-             android:orientation="vertical"
-             android:layout_marginTop="10dp">
+                />
 
-             <ImageView
-                 android:id="@+id/poster_detail"
-                 android:layout_width="match_parent"
-                 android:layout_height="200dp"
-                 android:src="@drawable/no_image"
+            <TextView
+                android:id="@+id/title_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/title_detail"
+                android:textColor="@color/colorBlack"
+                android:textSize="26sp" />
 
-                 />
+            <TextView
+                android:id="@+id/id_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info_id"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp" />
 
-             <TextView
-                 android:id="@+id/title_detail"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_gravity="center_horizontal"
-                 android:gravity="center"
-                 android:text="@string/title_detail"
-                 android:textColor="@color/colorBlack"
-                 android:textSize="24sp" />
-
-             <TextView
-                 android:id="@+id/id_detail"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/info_id"
-                 android:textColor="@color/colorBlack"
-                 android:textSize="10sp" />
-
-             <TextView
-                 android:id="@+id/genre_detail"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/genre_detail"
-                 android:textColor="@color/colorBlack"
-                 android:textSize="16sp" />
+            <TextView
+                android:id="@+id/genre_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/genre_detail"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
 
 
-             <TextView
-                 android:id="@+id/date_detail"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@string/date_detail"
-                 android:textColor="@color/colorBlack" />
+            <TextView
+                android:id="@+id/date_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/date_detail"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
 
-             <TextView
-                 android:id="@+id/syn_detail"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="5dp"
-                 android:layout_margin="5dp"
-                 android:text="@string/syn_detail"
-                 android:textColor="@color/colorBlack"
-                 android:textSize="14sp" />
+            <TextView
+                android:id="@+id/syn_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/syn_detail"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp" />
 
-             <TextView
+            <!-- <TextView
                  android:id="@+id/trailer_detail"
                  android:layout_marginTop="10dp"
                  android:layout_width="wrap_content"
@@ -114,11 +110,11 @@
                  android:orientation="horizontal"
                  android:scrollbars="horizontal"
 
-                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" /> !-->
 
 
-         </LinearLayout>
+        </LinearLayout>
 
-     </ScrollView>
+    </ScrollView>
 
 </RelativeLayout>

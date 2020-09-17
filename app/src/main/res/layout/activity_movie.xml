@@ -7,8 +7,18 @@
     android:layout_gravity="center"
     android:orientation="vertical"
 
-    tools:context=".MovieActivity">
+    tools:context=".GetTrendsActivity">
 
+
+  <Spinner
+      android:id="@+id/selection_spinner"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:minWidth="200dp"
+      android:minHeight="40dp"
+      android:entries="@array/spinner_array"
+      android:elevation="5dp"
+      />
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/list_recycler_view_movie"

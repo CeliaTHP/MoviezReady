@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VideoFullScreen"></activity>
+        <activity android:name=".GetAllActivity"></activity>
+        <activity android:name=".GetTrendsActivity" />
+        <activity android:name=".VideoFullScreen" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".MovieActivity" />
         <activity android:name=".MainActivity">

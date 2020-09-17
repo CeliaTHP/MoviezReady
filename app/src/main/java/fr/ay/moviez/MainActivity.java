@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent otherActivity= new Intent(getApplicationContext(), MovieActivity.class);
+                Intent otherActivity= new Intent(getApplicationContext(), GetTrendsActivity.class);
                 Log.e(TAG, string);
 
                 startActivity(otherActivity);

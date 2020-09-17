@@ -62,6 +62,9 @@ public class DetailActivity extends AppCompatActivity {
         String id = details.getStringExtra("id");
         movieID.setText(id);
 
+
+
+/*
         //get recycle view
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         RecyclerView recyclerView = findViewById(R.id.video_recycleview);
@@ -76,8 +79,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         VideoAdapter videoAdapter = new VideoAdapter(arrayList,getApplicationContext());
-        recyclerView.setAdapter(videoAdapter);
-
+        recyclerView.setAdapter(videoAdapter);*/
 
 
 
