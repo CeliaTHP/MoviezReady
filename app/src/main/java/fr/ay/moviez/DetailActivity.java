@@ -142,7 +142,7 @@ public class DetailActivity extends AppCompatActivity {
 
                         String poster = response.getString("backdrop_path");
                         ImageView dposter = findViewById(R.id.poster_detail);
-                        Picasso.get().load(baseurl+poster).into(dposter);
+                        Picasso.get().load(baseurl+poster).error(R.drawable.no_image).into(dposter);
 
 
                         //GetGenres

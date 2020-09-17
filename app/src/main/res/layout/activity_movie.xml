@@ -16,7 +16,7 @@
       android:layout_height="wrap_content"
       android:minWidth="200dp"
       android:minHeight="40dp"
-      android:entries="@array/spinner_array"
+      android:entries="@array/spinner_array_trends"
       android:elevation="5dp"
       />
 

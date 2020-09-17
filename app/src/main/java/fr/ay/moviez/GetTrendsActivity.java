@@ -37,7 +37,6 @@ public class GetTrendsActivity extends AppCompatActivity implements AdapterView.
     RecyclerView recyclerView;
     List<Movie> movieList;
 
-    int spinner_pos;
 
 
 
@@ -53,7 +52,7 @@ public class GetTrendsActivity extends AppCompatActivity implements AdapterView.
         //spinner
 
         Spinner spinner = findViewById(R.id.selection_spinner);
-        ArrayAdapter<CharSequence> spinner_adapter = ArrayAdapter.createFromResource(this,R.array.spinner_array,R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> spinner_adapter = ArrayAdapter.createFromResource(this,R.array.spinner_array_trends,R.layout.support_simple_spinner_dropdown_item);
         spinner_adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(spinner_adapter);
         spinner.setOnItemSelectedListener(this);

@@ -24,5 +24,8 @@
     <string name="fullscren_text">MODE PLEIN ÉCRAN</string>
     <string name="swiperight"><![CDATA[>]]></string>
     <string name="swipeleft"><![CDATA[<]]></string>
+    <string name="page_num">0</string>
+    <string name="next">+</string>
+    <string name="prev">-</string>
 
 </resources>

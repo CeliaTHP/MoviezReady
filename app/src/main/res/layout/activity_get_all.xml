@@ -8,15 +8,68 @@
     android:orientation="vertical"
     tools:context=".GetAllActivity">
 
-    <Spinner
-        android:id="@+id/selection_spinner2"
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="200dp"
-        android:minHeight="40dp"
-        android:entries="@array/spinner_array"
-        android:elevation="5dp"
-        />
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/selection_spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="35dp"
+            android:entries="@array/spinner_array_all"
+            android:elevation="5dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/pagenum"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="285dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page_num"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            >
+        </TextView>
+
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="80dp"
+            android:layout_toLeftOf="@id/next"
+            android:elevation="5dp"
+            android:text="@string/prev"
+            android:textColor="@color/colorBlack"
+            android:textSize="10sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="38dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-2dp"
+            android:elevation="5dp"
+            android:text="@string/next"
+            android:textColor="@color/colorBlack"
+            android:textSize="10sp">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_movie_recycle_view"
@@ -26,8 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/movie_adapter"
+        tools:listitem="@layout/movie_adapter" />
 
-        />
 
 </LinearLayout>
