@@ -37,6 +37,10 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
 
     MovieAdapter adapter;
 
+    Button nextpage;
+     int page = 498;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +56,15 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
         spinner.setAdapter(spinner_adapter);
         spinner.setOnItemSelectedListener(this);
 
-        //trends
+        //get listinfos for recycleview
+        movieList = new ArrayList<>();
         recyclerView = findViewById(R.id.all_movie_recycle_view);
         RecyclerView.ItemDecoration div = new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(div);
-        movieList = new ArrayList<>();
 
-        getAll(500);
+
+        getAll(page);
+
 
 
 
@@ -67,7 +73,7 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
 
-    public void getAll(int page){
+    public int getAll(final int page){
 
         TextView pagenumview = findViewById(R.id.pagenum);
         pagenumview.setText(page + "/500");
@@ -101,6 +107,7 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
                         movieList.add(movie);
 
 
+
                     }
                     catch (JSONException e) {
                         e.printStackTrace();
@@ -110,6 +117,41 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 adapter = new MovieAdapter(getApplicationContext(),movieList);
                 recyclerView.setAdapter(adapter);
+
+                //onclick previous
+
+                Button prevpage = findViewById(R.id.prev);
+
+                prevpage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(page > 1 ) {
+                            movieList = new ArrayList<>();
+
+                            getAll(page -1  );
+
+                        }
+
+                    }
+                });
+
+                //onclick next
+                Button nextpage = findViewById(R.id.next);
+                nextpage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(page < 500) {
+                            movieList = new ArrayList<>();
+
+                            getAll(page + 1);
+
+                        }
+
+                    }
+                });
+
+
+
 
 
 
@@ -124,6 +166,9 @@ public class GetAllActivity extends AppCompatActivity implements AdapterView.OnI
 
         });
         queue.add(request);
+        return page;
+
+
 
     }
 

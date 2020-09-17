@@ -23,48 +23,55 @@
             />
 
 
-
-        <TextView
-            android:id="@+id/pagenum"
-            android:layout_marginTop="6dp"
-            android:layout_marginStart="285dp"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/page_num"
-            android:textColor="@color/colorBlack"
-            android:textSize="16sp"
-            >
-        </TextView>
+            android:layout_margin="5dp"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/pagenum"
+                android:layout_marginTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/page_num"
+                android:textColor="@color/colorBlack"
+                android:layout_toRightOf="@id/prev"
+                android:textSize="16sp"
+                >
+            </TextView>
 
 
-        <Button
-            android:id="@+id/prev"
-            android:layout_width="38dp"
-            android:layout_height="35dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="-1dp"
-            android:layout_marginEnd="80dp"
-            android:layout_toLeftOf="@id/next"
-            android:elevation="5dp"
-            android:text="@string/prev"
-            android:textColor="@color/colorBlack"
-            android:textSize="10sp">
+            <Button
+                android:id="@+id/prev"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:elevation="5dp"
+                android:text="@string/prev"
+                android:textColor="@color/colorBlack"
+                android:textSize="10sp">
 
-        </Button>
+            </Button>
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="38dp"
-            android:layout_height="35dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-2dp"
-            android:elevation="5dp"
-            android:text="@string/next"
-            android:textColor="@color/colorBlack"
-            android:textSize="10sp">
+            <Button
+                android:id="@+id/next"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:elevation="5dp"
+                android:layout_toRightOf="@id/pagenum"
+                android:text="@string/next"
+                android:textColor="@color/colorBlack"
+                android:textSize="10sp">
 
-        </Button>
+            </Button>
+
+
+
+        </RelativeLayout>
+
+
+
+
 
 
     </RelativeLayout>
